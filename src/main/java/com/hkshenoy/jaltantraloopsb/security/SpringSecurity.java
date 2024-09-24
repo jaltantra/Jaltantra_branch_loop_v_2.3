@@ -44,7 +44,7 @@ public class SpringSecurity {
         http.csrf().disable()
                 .authorizeHttpRequests((authorize) ->
                         authorize.requestMatchers("/","/images/**","/css/**","/register/**","/verify/**").permitAll()
-                        //authorize.requestMatchers("/**").permitAll()
+                                //authorize.requestMatchers("/**").permitAll()
                                 .anyRequest().authenticated()
 
                 ).formLogin(
@@ -55,42 +55,42 @@ public class SpringSecurity {
                                 .permitAll()
                                 .successHandler(new AuthenticationSuccessHandler() {
 
-                            @Override
-                            public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
-                                                                Authentication authentication) throws IOException, ServletException {
-                                // run custom logics upon successful login
+                                    @Override
+                                    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                                                                        Authentication authentication) throws IOException, ServletException {
+                                        // run custom logics upon successful login
 
-                                //get user details
-                                UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-                                String email = userDetails.getUsername();
+                                        //get user details
+                                        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+                                        String email = userDetails.getUsername();
 
-                                //get user objects
-                                User user = userRepository.findByEmail(email);
+                                        //get user objects
+                                        User user = userRepository.findByEmail(email);
 
-                                UserSessionDetail userSessionDetail=new UserSessionDetail();
-                                userSessionDetail.setSessionId(request.getSession().getId());
-                                userSessionDetail.setClientIpAddress(request.getRemoteAddr());
+                                        UserSessionDetail userSessionDetail=new UserSessionDetail();
+                                        userSessionDetail.setSessionId(request.getSession().getId());
+                                        userSessionDetail.setClientIpAddress(request.getRemoteAddr());
 
-                                String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-                                userSessionDetail.setLoginDatetime(timeStamp);
-
-
-                                if(user.getSessionDetail()==null){
-                                    user.setSessionDetail(new ArrayList<>());
-                                }
-
-                                System.out.println(userSessionDetail.toString());
-                                user.getSessionDetail().add(userSessionDetail);
-
-                                userRepository.save(user);
-
-                                response.sendRedirect(request.getContextPath());
+                                        String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+                                        userSessionDetail.setLoginDatetime(timeStamp);
 
 
+                                        if(user.getSessionDetail()==null){
+                                            user.setSessionDetail(new ArrayList<>());
+                                        }
+
+                                        System.out.println(userSessionDetail.toString());
+                                        user.getSessionDetail().add(userSessionDetail);
+
+                                        userRepository.save(user);
+
+                                        response.sendRedirect(request.getContextPath());
 
 
-                            }
-                        })
+
+
+                                    }
+                                })
                 )
                 .logout(
                         logout -> logout

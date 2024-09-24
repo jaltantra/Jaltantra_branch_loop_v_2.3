@@ -10,9 +10,9 @@ import java.util.Set;
 //nodeid: unique integer node id
 //nodename: name of the node
 //elevation: elevation of the node in metres
-//demand: actual demand of the node in litres per second 
+//demand: actual demand of the node in litres per second
 //basedemand: daily demand of the node in litres per second
-// for example: 
+// for example:
 // base demand = 2 lps
 // if supply hours = 12 hours
 // demand = 2 * 24/12 = 4 lps
@@ -48,7 +48,7 @@ public class Node {
 	private double esrTotalDemand;
 	private double esrCost;
 	private Set<Node> servedNodes = new HashSet<Node>();
-	
+
 //	public int getNextNodeID(Set<Integer> usedNodeIDs){
 //		int id = 0;
 //		while(usedNodeIDs.contains(id))
@@ -57,7 +57,7 @@ public class Node {
 //		}
 //		return id;
 //	}
-	
+
 	// set a custom node id to this node
 	private void setCustomID(int nodeID, Set<Integer> usedNodeIDs) throws Exception{
 		this.nodeID = nodeID;
@@ -70,21 +70,21 @@ public class Node {
 			throw new Exception("Node ID "+this.nodeID + " already being used");
 		}
 	}
-		
+
 	public Node(double elevation, double demand, int nodeID, double minPressure, String nodeName, double peakFactor, Set<Integer> usedNodeIDs) throws Exception{
 		this.elevation = elevation;
 		this.basedemand = demand;
 		this.demand = demand * peakFactor;
-		this.residualPressure = minPressure;	
+		this.residualPressure = minPressure;
 		setCustomID(nodeID, usedNodeIDs);
 		this.nodeName = nodeName;
 		this.ESR = this.nodeID;
 	}
-		
+
 	public int getNodeID(){
-		return nodeID;	
+		return nodeID;
 	}
-	
+
 	public double getDemand() {
 		return demand;
 	}
@@ -92,35 +92,35 @@ public class Node {
 	{
 		this.demand=demand;
 	}
-	
+
 	public boolean getAllowESR(){
 		return allowESR;
 	}
-	
+
 	public void setAllowESR(boolean allowESR){
 		this.allowESR = allowESR;
 	}
-	
+
 	public String getNodeName() {
 		return nodeName;
 	}
-		
+
 	public double getResidualPressure() {
 		return residualPressure;
 	}
-	
+
 	public List<Pipe> getOutgoingPipes(){
 		return outgoingPipes;
 	}
-	
+
 	public void addToOutgoingPipes(Pipe pipe){
 		outgoingPipes.add(pipe);
 	}
-	
+
 	public List<Pipe> getSourceToNodePipes(){
 		return sourceToNodePipes;
 	}
-	
+
 	public void addToSourceToNodePipes(Pipe pipe){
 		sourceToNodePipes.add(pipe);
 	}
@@ -129,41 +129,41 @@ public class Node {
 		for(Pipe pipe : sourceToNodePipes2)
 			this.sourceToNodePipes.add(pipe);
 	}
-	
+
 	public void addToUpstreamNodes(Set<Node> upstreamNodes){
 		for(Node node : upstreamNodes)
-			this.upstreamNodes.add(node);	
+			this.upstreamNodes.add(node);
 	}
-	
+
 	public void addToUpstreamNodes(Node upstreamNode){
 		this.upstreamNodes.add(upstreamNode);
 	}
-	
+
 	public void addToDownstreamNodes(Set<Node> downstreamNodes){
 		for(Node node : downstreamNodes)
-			this.downstreamNodes.add(node);	
+			this.downstreamNodes.add(node);
 	}
-	
+
 	public Set<Node> getUpstreamNodes(){
 		return upstreamNodes;
 	}
-	
+
 	public Set<Node> getDownstreamNodes(){
 		return downstreamNodes;
 	}
-	
+
 	public void addToDownstreamNodes(Node downstreamNode){
 		this.downstreamNodes.add(downstreamNode);
 	}
-	
+
 	public double getElevation() {
 		return elevation;
 	}
-	
+
 	public double getHead() {
 		return head;
 	}
-	
+
 	public void setHead(double head) {
 		this.head = head;
 	}
@@ -194,17 +194,17 @@ public class Node {
 
 	public void setEsrTotalDemand(double esrTotalDemand) {
 		this.esrTotalDemand = esrTotalDemand;
-	}	
-	
+	}
+
 	public void addToServedNodes(Set<Node> servedNodes){
 		for(Node node : servedNodes)
-			this.servedNodes.add(node);	
+			this.servedNodes.add(node);
 	}
-	
+
 	public void addToServedNodes(Node servedNode){
-		this.servedNodes.add(servedNode);	
+		this.servedNodes.add(servedNode);
 	}
-	
+
 	public Set<Node> getServedNodes(){
 		return servedNodes;
 	}
@@ -216,7 +216,7 @@ public class Node {
 	public void setEsrCost(double esrCost) {
 		this.esrCost = esrCost;
 	}
-	
+
 	public double getRequiredCapacity(double esrCapacityFactor){
 		return esrCapacityFactor * basedemand * 3600*24;
 	}

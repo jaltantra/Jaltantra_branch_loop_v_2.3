@@ -4,11 +4,6 @@ package com.hkshenoy.jaltantraloopsb.optimizer;
 import com.hkshenoy.jaltantraloopsb.structs.*;
 import com.hkshenoy.jaltantraloopsb.helper.CustomLogger;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -19,6 +14,7 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 
 
 // This class is responsible for optimization of the network
@@ -362,6 +358,7 @@ public class Optimizer {
 		while (!left.isEmpty()) {
 			Node top = left.pop();
 			if (seen.contains(top)) {
+				System.out.println(top);
 				return 2; // cycle
 			}
 			seen.add(top);
