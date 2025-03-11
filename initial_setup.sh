@@ -25,7 +25,7 @@ chmod 777 -R JalTantra-Code-and-Scripts/ampl.linux-intel64
 # Define variables
 MINICONDA_INSTALLER="Miniconda3-latest-Linux-x86_64.sh"
 ENV_NAME="dev"
-MINICONDA_HOME="$HOME/miniconda"
+MINICONDA_HOME="$HOME/miniconda"    
 
 # Download Miniconda installer
 wget https://repo.anaconda.com/miniconda/$MINICONDA_INSTALLER
