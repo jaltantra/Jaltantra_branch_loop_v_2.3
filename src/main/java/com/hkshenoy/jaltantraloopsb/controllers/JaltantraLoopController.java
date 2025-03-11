@@ -44,8 +44,6 @@ public class JaltantraLoopController {
     @Autowired
     private UserHistoryTracker userHistoryTracker;
 
-
-
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
@@ -66,9 +64,6 @@ public class JaltantraLoopController {
         model.addAttribute("version",version);
         return "loop";
     }
-
-
-
 
 
     //handle request from JalTantra site

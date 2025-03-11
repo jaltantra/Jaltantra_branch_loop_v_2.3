@@ -354,7 +354,6 @@ public class Optimizer {
 
 		Node root = source;
 
-
 		HashSet<Node> seen = new HashSet<>();
 		Stack<Node> left = new Stack<>();
 		left.add(root);
@@ -458,7 +457,7 @@ public class Optimizer {
 		final int networkValidationResult = validateNetwork();
 		customLogger.logd("Network validation complete..., networkValidationResult = " + networkValidationResult);
 		if (networkValidationResult == 1 || networkValidationResult == 2) {
-			final String networkFileResult = createNetworkFile();
+			final String networkFileResult = createNetworkFile(); // 0-hashedfilename.R
 			final String networkFileStatus = networkFileResult.substring(0, networkFileResult.indexOf("-"));
 			final String networkFileName = networkFileResult.substring(2);
 			String networkFileHash = networkFileName.substring(0, networkFileName.lastIndexOf("."));

@@ -14,7 +14,7 @@ param R{pipes};		### Roughness of each commercial pipe
 param F_L{F_arcs};	 
 param F_d{F_arcs};	 
 param F_R{F_arcs};	 
-param Source;		### Source node ID
+param Source;		### Source node IDm1
 param vmax{arcs} default 100; #maximum velocity in each pipe
 
 ### Undefined parameters ###

@@ -53,7 +53,7 @@ if [[ -f "${1}" ]]; then
 
     # REFER: https://stackoverflow.com/questions/876239/how-to-redirect-and-append-both-standard-output-and-standard-error-to-a-file-wit
     # "${MINICONDA_HOME}/envs/dev/bin/python3" CalculateNetworkCost.py -p "${1}"  --solver-models 'alphaecp 1 2' --solver-models 'baron 1 2' --solver-models 'knitro 1 2' --time "${2}" --prefix "${3}" --versionNumber "${4}" --projectName "${5}" --debug > "${1}${3}.log" 2>&1
-    "${MINICONDA_HOME}/envs/dev/bin/python3" CalculateNetworkCost.py -p "${1}" --solver-models 'baron 1' --solver-models 'knitro 1' --time "${2}" --prefix "${3}" --versionNumber "${4}" --projectName "${5}" --debug > "${1}${3}.log" 2>&1
+    "${MINICONDA_HOME}/envs/dev/bin/python3" CalculateNetworkCost.py -p "${1}" --solver-models 'baron 1' --time "${2}" --prefix "${3}" --versionNumber "${4}" --projectName "${5}" --threads-per-solver-instance '3' --debug > "${1}${3}.log" 2>&1
 else
     echo "ERROR: either file does not exist or it is not a file: '${1}'" >> "${LOG_FILE}"
 fi
