@@ -10,7 +10,7 @@
 # NOTE: cd "$(dirname "$0")"    did worked
 
 
-# MINICONDA_HOME='/home/student/miniconda3'
+# MINICONDA_HOME='/home/utsav/miniconda'
 
 FILE_PATH=$(dirname "$0")
 cd "${FILE_PATH}"
@@ -29,6 +29,7 @@ echo "\$1      = '${1}'" >> "${LOG_FILE}"
 echo "\$2      = '${2}'" >> "${LOG_FILE}"
 echo "python  = '$(which python)'" >> "${LOG_FILE}"
 echo "python3 = '$(which python3)'" >> "${LOG_FILE}"
+echo "miniconda = '${MINICONDA_HOME}'" >> ${LOG_FILE}
 dirname "${0}" >> "${LOG_FILE}"
 echo "$(dirname '$0')" >> "${LOG_FILE}"
 echo "${FILE_PATH}" >> "${LOG_FILE}"
