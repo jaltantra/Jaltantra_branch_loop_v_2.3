@@ -3,9 +3,9 @@ name: Java CI
 # Run on every push or pull-request to main/master
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main, master, ankush2 ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main, master, ankush2 ]
 
 jobs:
   build:
