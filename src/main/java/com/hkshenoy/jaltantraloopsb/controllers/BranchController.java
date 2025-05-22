@@ -19,8 +19,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.TreeMap;
+
 
 @Controller
 @RequestMapping("/branch")
@@ -28,8 +33,7 @@ import java.util.*;
 public class BranchController
 {		
 
-	//version number of JalTantra
-
+	
 	@Value("${JALTANTRA_VERSION}")
 	private String version;
 	
