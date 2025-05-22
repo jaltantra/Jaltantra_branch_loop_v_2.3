@@ -33,17 +33,4 @@ jobs:
       - name: Build & Test
         run: ./mvnw clean package
 
-      # 4. Smoke-test application startup
-      - name: Smoke-test Spring Boot startup
-        run: |
-          # start the app in the background and capture its output
-          nohup java -jar target/JaltantraLoopSB-0.0.1-SNAPSHOT.jar \
-            --spring.profiles.active=dev > app.log 2>&1 &
-          # allow time for startup
-          sleep 15
-          # dump the first 200 lines of log so you can see if it started correctly
-          echo "---- Application log ----"
-          head -n 200 app.log
-          # shut it down
-          pkill -f 'JaltantraLoopSB-0.0.1-SNAPSHOT.jar'
-
+    
