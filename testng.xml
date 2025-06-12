@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Jaltantra E2E Suite">
+  <test name="LoginTest">
+    <classes>
+      <class name="com.hkshenoy.jaltantraloopsb.JaltantraEndToEndTest" />
+    </classes>
+  </test>
+</suite>
+
+
+
