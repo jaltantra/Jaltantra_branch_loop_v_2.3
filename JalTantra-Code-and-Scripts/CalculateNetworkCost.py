@@ -424,8 +424,15 @@ class SolverOutputAnalyzerBaron(SolverOutputAnalyzerParent):
         #     display total_cost;
         try:
             file_txt = open(exec_info.uniq_std_out_err_file_path, 'r').read()
-            best_solution = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M).group(1)
-            best_solution = float(best_solution)
+            match = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M)
+
+            if not match:
+                g_logger.warning("BARON output: total_cost not found — solver license expired.")
+                return False, 0.0  # Fail gracefully without crashing
+
+            best_solution = float(match.group(1))
+            # best_solution = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M).group(1)
+            # best_solution = float(best_solution)
             ok = True
             if best_solution > 1e40 or best_solution == 0:
                 g_logger.warning(f"Probably an infeasible solution found by Baron: '{best_solution}'")
@@ -550,8 +557,8 @@ class SolverOutputAnalyzerKnitro(SolverOutputAnalyzerParent):
             match = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M)
 
             if not match:
-            	g_logger.warning("KNITRO output: total_cost not found — solver may have failed or license expired.")
-            	return False, 0.0  # Fail gracefully without crashing
+                g_logger.warning("KNITRO output: total_cost not found — solver may have failed or license expired.")
+                return False, 0.0  # Fail gracefully without crashing
 
             best_solution = float(match.group(1))
             infeasibility_found = bool(re.search(r'\binfeasible\b', file_txt))
