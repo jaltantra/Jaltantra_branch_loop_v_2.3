@@ -304,3 +304,514 @@ Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieva
 2024-06-13 21:46:17.589 [main] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Public Key Retrieval is not allowed
 2024-06-13 21:46:17.593 [main] ERROR o.s.o.j.LocalContainerEntityManagerFactoryBean - Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Public Key Retrieval is not allowed] [n/a]
 2024-06-13 21:46:17.594 [main] WARN  o.s.w.c.s.GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution [Public Key Retrieval is not allowed] [n/a]
+2025-06-17 14:37:06.584 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 14:37:08.764 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-17 14:37:26.658 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-06-17 14:37:29.115 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-06-17 14:37:39.886 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:37:39.962 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:37:39.994 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:37:40.258 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:37:40.261 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:37:40.270 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:37:40.362 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code,rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users u1_0 left join users_request_details rd1_0 on u1_0.id=rd1_0.user_id where u1_0.id=?
+2025-06-17 14:37:40.389 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:37:40.490 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - insert into users_session_details (client_ip_address,login_datetime,session_id) values (?,?,?)
+2025-06-17 14:37:40.592 [http-nio-8090-exec-10] DEBUG org.hibernate.SQL - update users_session_details set user_id=? where id=?
+2025-06-17 14:38:16.321 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:38:16.325 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:38:16.330 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:38:16.334 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:38:16.363 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:38:16.434 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:38:16.446 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:38:16.448 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:38:16.449 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:38:16.449 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1000}]
+2025-06-17 14:38:16.449 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:38:16.450 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:38:16.450 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:38:16.450 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:38:16.450 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:38:16.451 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:38:16.451 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:38:16.451 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:38:16.451 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:38:16.452 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1000]
+2025-06-17 14:38:16.453 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:38:16.454 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:38:16.495 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:38:16.497 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:38:16.520 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: File renamed and moved successfully: '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput/2025-06-17_14-38-16.497_0_9279945.R' -> '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput_hashed/2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e.R'
+2025-06-17 14:38:16.520 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: creating gams m1 and m2 model data file
+2025-06-17 14:38:16.545 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: finished creating gams m1 and m2 model data file
+2025-06-17 14:38:16.545 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:38:16.546 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Please save the network file, if not, before continuing the optimization
+2025-06-17 14:38:16.546 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:38:16.547 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:38:19.581 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:38:19.584 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:38:19.587 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:38:19.592 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:38:19.614 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:38:19.628 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:38:19.637 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:38:19.638 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:38:19.638 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:38:19.638 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1000}]
+2025-06-17 14:38:19.639 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:38:19.639 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:38:19.639 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:38:19.639 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:38:19.639 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:38:19.640 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:38:19.640 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:38:19.640 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:38:19.640 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:38:19.640 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:38:19.641 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:38:19.641 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:38:19.641 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:38:19.641 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:38:19.641 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1000]
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:38:19.642 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:38:19.647 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:38:19.648 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:38:19.650 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:38:19.651 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:38:19.652 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = 2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e1min, statusFileExists = false
+2025-06-17 14:38:19.652 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Starting the solvers (CalculateNetworkCost.py) for network file '2-2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e.R'
+2025-06-17 14:38:19.652 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Linux
+2025-06-17 14:38:21.666 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:38:21.666 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:39:51.770 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:39:51.774 [http-nio-8090-exec-6] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:39:51.777 [http-nio-8090-exec-6] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:39:51.782 [http-nio-8090-exec-6] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:39:51.800 [http-nio-8090-exec-6] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:39:51.821 [http-nio-8090-exec-6] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:39:51.828 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:39:51.829 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:39:51.829 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:39:51.829 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1000}]
+2025-06-17 14:39:51.829 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:39:51.830 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:39:51.831 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:39:51.832 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:39:51.832 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1000]
+2025-06-17 14:39:51.832 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:39:51.832 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:39:51.837 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:39:51.838 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:39:51.843 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:39:51.844 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:39:51.844 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = 2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e1min, statusFileExists = true
+2025-06-17 14:39:51.845 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:39:51.845 [http-nio-8090-exec-6] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:39:55.941 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:39:55.944 [http-nio-8090-exec-7] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:39:55.947 [http-nio-8090-exec-7] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:39:55.952 [http-nio-8090-exec-7] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:39:55.967 [http-nio-8090-exec-7] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:39:55.983 [http-nio-8090-exec-7] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:39:55.990 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:39:55.991 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:39:55.992 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:39:55.992 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1000}]
+2025-06-17 14:39:55.992 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:39:55.992 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:39:55.992 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:39:55.993 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:39:55.994 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:39:55.995 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:39:55.995 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1000]
+2025-06-17 14:39:55.995 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:39:55.995 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:39:56.001 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:39:56.002 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:39:56.006 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:39:56.007 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:39:56.008 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = 2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e1min, statusFileExists = true
+2025-06-17 14:39:56.008 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:39:56.008 [http-nio-8090-exec-7] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:39:58.961 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:39:58.966 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:39:58.970 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:39:58.974 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:39:58.994 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:39:59.016 [http-nio-8090-exec-2] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:39:59.023 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1000}]
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:39:59.024 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:39:59.025 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:39:59.026 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1000]
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:39:59.027 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:39:59.032 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:39:59.033 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:39:59.037 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:39:59.037 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:39:59.038 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = 2407321cd6ab8a8af92c338330ae777c8aaaf8ce6407c1d37a189b1128339a0e1min, statusFileExists = true
+2025-06-17 14:39:59.038 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:39:59.038 [http-nio-8090-exec-2] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Either no feasible solution found, or failed to solve the network in 1 minutes 
+ Few tips:
+ 1.Increase the time for solver
+ 2.Increase the Maximum velocity (if provided)
+ 3.Add higher diameter pipes in set of commerically available pipes
+2025-06-17 14:40:05.740 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:40:05.745 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:40:05.748 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:40:05.751 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:40:05.766 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:40:05.775 [http-nio-8090-exec-1] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:40:05.789 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:40:05.790 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:40:05.790 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:40:05.790 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1001}]
+2025-06-17 14:40:05.790 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:40:05.791 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:40:05.792 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1001]
+2025-06-17 14:40:05.793 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:40:05.793 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:40:05.798 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:40:05.799 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:40:05.803 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: File renamed and moved successfully: '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput/2025-06-17_14-40-05.799_0_5105876.R' -> '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput_hashed/fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d8.R'
+2025-06-17 14:40:05.804 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: creating gams m1 and m2 model data file
+2025-06-17 14:40:05.816 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: finished creating gams m1 and m2 model data file
+2025-06-17 14:40:05.817 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:40:05.817 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Please save the network file, if not, before continuing the optimization
+2025-06-17 14:40:05.818 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:40:05.818 [http-nio-8090-exec-1] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:40:08.817 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:40:08.824 [http-nio-8090-exec-4] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:40:08.829 [http-nio-8090-exec-4] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:40:08.833 [http-nio-8090-exec-4] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:40:08.846 [http-nio-8090-exec-4] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:40:08.855 [http-nio-8090-exec-4] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:40:08.864 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:40:08.864 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:40:08.864 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1001}]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:40:08.865 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1001]
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:40:08.866 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:40:08.871 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:40:08.872 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:40:08.877 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:40:08.877 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:40:08.877 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d81min, statusFileExists = false
+2025-06-17 14:40:08.877 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Starting the solvers (CalculateNetworkCost.py) for network file '2-fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d8.R'
+2025-06-17 14:40:08.878 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Linux
+2025-06-17 14:40:10.881 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:40:10.881 [http-nio-8090-exec-4] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:41:40.987 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:41:40.991 [http-nio-8090-exec-3] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:41:40.995 [http-nio-8090-exec-3] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:41:40.998 [http-nio-8090-exec-3] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:41:41.012 [http-nio-8090-exec-3] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:41:41.029 [http-nio-8090-exec-3] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:41:41.036 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:41:41.037 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:41:41.037 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:41:41.037 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1001}]
+2025-06-17 14:41:41.037 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:41:41.037 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:41:41.038 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:41:41.039 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:41:41.040 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:41:41.040 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1001]
+2025-06-17 14:41:41.040 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:41:41.040 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:41:41.045 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:41:41.045 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:41:41.047 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: File renamed and moved successfully: '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput/2025-06-17_14-41-41.045_0_6096998.R' -> '/home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts/./DataNetworkGraphInput_hashed/fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d8.R'
+2025-06-17 14:41:41.048 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: creating gams m1 and m2 model data file
+2025-06-17 14:41:41.058 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: finished creating gams m1 and m2 model data file
+2025-06-17 14:41:41.059 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:41:41.059 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Please save the network file, if not, before continuing the optimization
+2025-06-17 14:41:41.060 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:41:41.060 [http-nio-8090-exec-3] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: Please save the network file, if not, before continuing the optimization and click on optimize button again
+2025-06-17 14:42:02.023 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:42:02.025 [http-nio-8090-exec-9] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:42:02.028 [http-nio-8090-exec-9] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:42:02.030 [http-nio-8090-exec-9] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:42:02.043 [http-nio-8090-exec-9] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:42:02.054 [http-nio-8090-exec-9] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:42:02.060 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1001}]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:42:02.061 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1001]
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:42:02.062 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:42:02.068 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:42:02.068 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:42:02.072 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:42:02.073 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:42:02.073 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d81min, statusFileExists = false
+2025-06-17 14:42:02.073 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Starting the solvers (CalculateNetworkCost.py) for network file '2-fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d8.R'
+2025-06-17 14:42:02.073 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Linux
+2025-06-17 14:42:04.076 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:42:04.077 [http-nio-8090-exec-9] ERROR c.h.j.logging.ConsoleInterceptor - FM: ERROR: Exception e = java.lang.Exception: The solver is working, refresh the page after 1 minutes to see the results
+2025-06-17 14:43:34.180 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() called
+2025-06-17 14:43:34.183 [http-nio-8090-exec-5] DEBUG org.hibernate.SQL - select u1_0.id,u1_0.country,u1_0.designation,u1_0.email,u1_0.enabled,u1_0.name,u1_0.organization,u1_0.password,u1_0.state,u1_0.verification_code from users u1_0 where u1_0.email=?
+2025-06-17 14:43:34.187 [http-nio-8090-exec-5] DEBUG org.hibernate.SQL - select sd1_0.user_id,sd1_0.id,sd1_0.client_ip_address,sd1_0.login_datetime,sd1_0.session_id from users_session_details sd1_0 where sd1_0.user_id=?
+2025-06-17 14:43:34.192 [http-nio-8090-exec-5] DEBUG org.hibernate.SQL - select rd1_0.user_id,rd1_0.id,rd1_0.request_datetime,rd1_0.request_url,rd1_0.session_id from users_request_details rd1_0 where rd1_0.user_id=?
+2025-06-17 14:43:34.205 [http-nio-8090-exec-5] DEBUG org.hibernate.SQL - insert into users_request_details (request_datetime,request_url,session_id) values (?,?,?)
+2025-06-17 14:43:34.226 [http-nio-8090-exec-5] DEBUG org.hibernate.SQL - update users_request_details set user_id=? where id=?
+2025-06-17 14:43:34.234 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: doPost() action=null
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: cmd: [save-record]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: recid: [0]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: general: [{"name_project":"Sample","name_organization":"IIT Bombay","min_node_pressure":7,"def_pipe_roughness":140,"max_hl_perkm":10,"supply_hours":12,"source_nodeid":8,"source_nodename":"Node8","source_elevation":505,"source_head":530,"max_water_speed":1001}]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: nodes: [[{"recid":1,"nodeid":1,"nodename":"Node1","elevation":442,"demand":2.1},{"recid":2,"nodeid":2,"nodename":"Node2","elevation":477,"demand":0.8},{"recid":3,"nodeid":3,"nodename":"Node3","elevation":496,"demand":3.4},{"recid":4,"nodeid":4,"nodename":"Node4","elevation":464,"demand":1.75},{"recid":5,"nodeid":7,"nodename":"Node7","elevation":493,"demand":2.6},{"recid":6,"nodeid":6,"nodename":"Node6","elevation":390,"demand":1.8},{"recid":7,"nodeid":9,"nodename":"Node9","elevation":517},{"recid":8,"nodeid":10,"nodename":"Node10","elevation":509},{"recid":9,"nodeid":11,"nodename":"Node11","elevation":472}]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pipes: [[{"recid":1,"pipeid":2,"diameter":110,"length":7345,"startnode":3,"endnode":7,"parallelallowed":true},{"recid":2,"pipeid":3,"length":3491,"startnode":2,"endnode":6},{"recid":3,"pipeid":4,"length":2442,"startnode":2,"endnode":4},{"recid":4,"pipeid":5,"length":1943,"startnode":9,"endnode":3},{"recid":5,"pipeid":6,"length":2686,"startnode":8,"endnode":9},{"recid":6,"pipeid":7,"length":4808,"startnode":10,"endnode":2},{"recid":7,"pipeid":8,"length":924,"startnode":3,"endnode":10},{"recid":8,"pipeid":9,"length":4266,"startnode":11,"endnode":1},{"recid":9,"pipeid":10,"length":485,"startnode":4,"endnode":11},{"recid":10,"pipeid":1,"length":318,"startnode":4,"endnode":6}]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: commercialPipes: [[{"recid":1,"diameter":63,"roughness":140,"cost":116},{"recid":2,"diameter":75,"roughness":140,"cost":172},{"recid":3,"diameter":90,"roughness":140,"cost":231},{"recid":4,"diameter":110,"roughness":140,"cost":340},{"recid":5,"diameter":125,"roughness":140,"cost":461},{"recid":6,"diameter":140,"roughness":140,"cost":576},{"recid":7,"diameter":160,"roughness":140,"cost":750},{"recid":8,"diameter":180,"roughness":140,"cost":945},{"recid":9,"diameter":200,"roughness":140,"cost":1113},{"recid":10,"diameter":225,"roughness":140,"cost":1430},{"recid":11,"diameter":250,"roughness":140,"cost":1762},{"recid":12,"diameter":280,"roughness":140,"cost":2210},{"recid":13,"diameter":315,"roughness":140,"cost":2794}]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrGeneral: [{"must_esr":[],"must_not_esr":[]}]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: esrCost: [[]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpGeneral: [{"must_not_pump":[],"energycost_factor":1}]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: pumpManual: [[]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: valves: [[]]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: version: [2.3.0.0]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: time: [1min]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_project]: [Sample]
+2025-06-17 14:43:34.235 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[name_organization]: [IIT Bombay]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_node_pressure]: [7]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[def_pipe_roughness]: [140]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_hl_perkm]: [0]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_hl_perkm]: [10]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[supply_hours]: [12]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodeid]: [8]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_nodename]: [Node8]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_elevation]: [505]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[source_head]: [530]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_water_speed]: [1001]
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[min_water_speed]: []
+2025-06-17 14:43:34.236 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: record[max_pipe_pressure]: []
+2025-06-17 14:43:34.239 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation started...
+2025-06-17 14:43:34.239 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: Network validation complete..., networkValidationResult = 2
+2025-06-17 14:43:34.244 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Request for this network was already submitted in the past: it may be in progress🏃 or finished🏁
+2025-06-17 14:43:34.244 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver root dir : /home/utsav/Documents/MTP/Jaltantra_branch_loop_v_2.3/JalTantra-Code-and-Scripts
+2025-06-17 14:43:34.244 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: networkFileHash = fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d81min, statusFileExists = true
+2025-06-17 14:43:34.245 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Extracting the result
+2025-06-17 14:43:34.246 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: 0_result.txt first line = True
+2025-06-17 14:43:34.246 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Best result found for network with hash = fec3a731abbb9484078719764019c688eeec547ba94ed1a55f0e3d63fc6126d81min
+2025-06-17 14:43:34.246 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Solver = baron
+2025-06-17 14:43:34.246 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Model = m1
+2025-06-17 14:43:34.247 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: INFO: Best result = 12994932.486235332
+2025-06-17 14:43:34.250 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: *** The solution is ***
+2025-06-17 14:43:34.344 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10
+2025-06-17 14:43:34.344 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 1 449.0
+2025-06-17 14:43:34.344 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 493.215
+2025-06-17 14:43:34.344 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 522.824
+2025-06-17 14:43:34.344 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 480.015
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 6 477.19
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 7 500.0
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 8 530.0
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 9 526.035
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10 518.051
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 11 479.0
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 4 9.81746
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 6 1.48254
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 10 12.9
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 6 2.11746
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 11 4.2
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 8 9 24.9
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 9 3 24.9
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10 2 12.9
+2025-06-17 14:43:34.345 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 11 1 4.2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 7 5.2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 4 2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 2437.7
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 5 4.3000000000002085
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 6 1
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 0 3491.0
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 10 1
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 5 924.0
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 6 1
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 0 318.0
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 4 11 1
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 485.0
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 8 9 2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 9 1696.74
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10 989.2600000000001
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 9 3 2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 9 1721.39
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10 221.60999999999984
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 10 2 1
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 5 4808.0
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 11 1 2
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 1 790.281
+2025-06-17 14:43:34.346 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 2 3475.7189999999996
+2025-06-17 14:43:34.347 [http-nio-8090-exec-5] ERROR c.h.j.logging.ConsoleInterceptor - FM: DEBUG: 3 7 0

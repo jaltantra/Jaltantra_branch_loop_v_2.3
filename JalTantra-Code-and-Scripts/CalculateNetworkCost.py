@@ -545,10 +545,15 @@ class SolverOutputAnalyzerKnitro(SolverOutputAnalyzerParent):
         #     display total_cost;
         try:
             file_txt = open(exec_info.uniq_std_out_err_file_path, 'r').read()
-            best_solution = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M).group(1)
-            # Find if knitro returned correct output
-            # feasibility_error = re.search()
-            best_solution = float(best_solution)
+
+            # Try to search for total_cost
+            match = re.search(r'^total_cost\s*=\s*(.*)$', file_txt, re.M)
+
+            if not match:
+            	g_logger.warning("KNITRO output: total_cost not found — solver may have failed or license expired.")
+            	return False, 0.0  # Fail gracefully without crashing
+
+            best_solution = float(match.group(1))
             infeasibility_found = bool(re.search(r'\binfeasible\b', file_txt))
             ok = True
             if best_solution > 1e40 or infeasibility_found:
